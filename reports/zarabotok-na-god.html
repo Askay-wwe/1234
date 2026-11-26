@@ -1,0 +1,333 @@
+<title>План заработка на год</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
+<style>/* Layout: single readable column, KPI strip up top, wide tables scroll in place */
+:root{--bg:#f6f7f4;--surface:#ffffff;--fg:#1c2421;--muted:#5d6a64;--line:#dde3df;--accent:#0f7a6a;--accent-soft:#e2f1ee;--warn:#b4442c;--warn-soft:#f8e6e1;
+--display:"Unbounded",system-ui,sans-serif;--body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1a2220;--fg:#e6ece9;--muted:#9aa8a2;--line:#2c3734;--accent:#4cc3ad;--accent-soft:#183430;--warn:#f08a70;--warn-soft:#3a201a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1a2220;--fg:#e6ece9;--muted:#9aa8a2;--line:#2c3734;--accent:#4cc3ad;--accent-soft:#183430;--warn:#f08a70;--warn-soft:#3a201a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16.5px;line-height:1.65}
+.wrap{max-width:860px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,5vw,40px);line-height:1.15;margin:10px 0 24px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(20px,3.4vw,26px);line-height:1.25;margin:56px 0 14px;text-wrap:balance;scroll-margin-top:16px}
+h3{font-size:18px;font-weight:600;margin:32px 0 8px;text-wrap:balance}
+p{margin:0 0 14px;max-width:70ch}
+p.lead{font-size:17.5px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;max-width:none}
+strong{font-weight:600}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:720px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--accent-soft);border-radius:10px;padding:14px 14px 12px}
+.kpi .v{font-family:var(--display);font-weight:500;font-size:clamp(16px,2.4vw,20px);color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.2}
+.kpi .l{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.35}
+.kpi.warn{background:var(--warn-soft)}.kpi.warn .v{color:var(--warn)}
+.toc{margin:32px 0 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0}
+.toc ol{margin:8px 0 0;padding-left:20px;display:grid;gap:4px}
+.toc a{text-decoration:none;color:var(--fg)}.toc a:hover{color:var(--accent)}
+.tw{overflow-x:auto;margin:18px 0 22px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px;line-height:1.45}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:600;background:var(--accent-soft);color:var(--fg);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+<div class="wrap">
+<header class="top">
+<div class="eyebrow">Исследование · ноябрь 2026 · горизонт 12 месяцев · курс ≈445 ₸/$ (проверьте актуальный)</div>
+<h1>Трёхъязычие и навыки за год обгоняют депозит</h1>
+<div class="kpis">
+<div class="kpi"><div class="v">$20–26/час</div><div class="l">обучение ИИ на казахском (Prolific)</div></div>
+<div class="kpi"><div class="v">$23–33/час</div><div class="l">перевод EN↔KZ на Upwork</div></div>
+<div class="kpi"><div class="v">400 тыс.–1 млн ₸</div><div class="l">в месяц к 12-му месяцу (оценка)</div></div>
+<div class="kpi warn"><div class="v">14–16 тыс. ₸</div><div class="l">в месяц даёт депозит 1 млн ₸ — планка для бизнеса</div></div>
+</div>
+</header>
+<nav class="toc"><div class="eyebrow">Содержание</div><ol><li><a href="#s1">Казахский язык — дефицитный актив на рынке ИИ и локализации</a></li><li><a href="#s2">Сравнение путей: через год лидируют услуги, а не товарка</a></li><li><a href="#s3">IT-профессия за год: ставка на 1С, CRM и автоматизацию, а не на фронтенд</a></li><li><a href="#s4">Сбережения: депозит под 17–19% — планка, которую бизнес редко берёт</a></li><li><a href="#s5">Налоги и вывод денег: ИП на упрощёнке для долларовых доходов</a></li><li><a href="#s6">План на 12 месяцев: от заявок к собственной практике</a></li><li><a href="#s7">Что в этих цифрах надёжно, а что нет</a></li><li><a href="#s8">Вывод</a></li></ol></nav>
+<main><p class="lead">Если смотреть на горизонт 3–12 месяцев, студенту из Казахстана выгоднее всего вкладывать не сбережения, а время. Свободный казахский плюс русский и рабочий английский — редкое сочетание, которое платят в долларах. Его стоит соединить с прикладным IT-навыком: ИИ-автоматизацией, ботами и интеграциями CRM для местного бизнеса. Вход дают три направления. Первое — обучение ИИ на казахском: Prolific публикует роли «AI Trainer – Kazakh» с типичной ставкой <strong>$20–26/час (≈8 900–11 600 ₸)</strong> (<a target="_blank" rel="noopener" href="https://hiddenjobs.dev/company/prolificacademicltd/jobs/ai-trainer-kazakh-648f51a1/">hiddenjobs.dev</a>). Второе — перевод EN↔KZ для иностранных заказчиков: опытные казахстанские переводчики на Upwork берут <strong>$23–33/час</strong> (<a target="_blank" rel="noopener" href="https://www.upwork.com/hire/translators/kz/">Upwork</a>). Третье — боты и автоматизация: студии Алматы продают их за <strong>50 тыс. – 1,2 млн ₸ за проект</strong> (<a target="_blank" rel="noopener" href="https://aoe.kz/chat_bot/">aoe.kz</a>; <a target="_blank" rel="noopener" href="https://osn.kz/blog/stoimost-telegram-bota-v-kazakhstane-2026">osn.kz</a>). Планку задают две цифры: медианные ожидания айтишника без опыта — <strong>207 711 ₸ (≈$467)</strong> (<a target="_blank" rel="noopener" href="https://the-tech.kz/skolko-zarabatyvayut-programmisty-v-kazahstane-v-2026-godu/">the-tech.kz</a>), а 1 млн ₸ на сберегательном вкладе приносит около <strong>14–16 тыс. ₸ в месяц</strong> почти без риска. По моей оценке, сумма двух-трёх треков при 20–30 часах в неделю даёт <strong>100–300 тыс. ₸ в месяц к третьему месяцу, 250–500 тыс. к шестому и 400 тыс. – 1 млн к двенадцатому</strong>. Это расчёт по найденным ставкам, а не измеренный доход. Товарный бизнес на Kaspi и собственный блог за год, скорее всего, проиграют депозиту. Поэтому сбережения разумно держать на застрахованном вкладе или в гособлигациях как подушку, а тратить из них только на инструменты и рекламу услуг. Все долларовые суммы пересчитаны по <strong>445 ₸/$</strong>, как в предыдущем 30-дневном отчёте. В источниках конца 2026 года встречается курс <strong>≈483–489 ₸/$</strong>, так что актуальный курс стоит проверить. Почти все данные взяты из поисковых выдержек.</p>
+<h2 id="s1">Казахский язык — дефицитный актив на рынке ИИ и локализации</h2>
+<h3>Обучение моделей: казахский платит, русский конкурирует со всем СНГ</h3>
+<p>Для разработчиков больших языковых моделей казахский — «малоресурсный» язык, и в 2026 году под него открыты отдельные проекты. У Welo Data (часть Welocalize) есть вакансии «AI Trainers Network – Kazakh» и параллельно «– Russian». Требования: родной или почти родной казахский, проживание в Казахстане и английский. Задачи: разметка текста, изображений и аудио, а также написание и проверка промптов (<a target="_blank" rel="noopener" href="https://jobs.lever.co/weloglobal/88fe7330-e32e-4577-9384-9bb85e1a30f1">Lever, Kazakh</a>; <a target="_blank" rel="noopener" href="https://jobs.lever.co/weloglobal/0bfce19a-f593-45af-ac16-bd1cbef93952">Lever, Russian</a>). Welo не публикует единых ставок. Сторонние обзоры оценивают языковые задачи в <strong>$12–25/час</strong> и называют отбор «по-настоящему избирательным», а поток задач — неровным (<a target="_blank" rel="noopener" href="https://remowork.life/blog/top-ai-training-platforms-that-pay-you-to-train-ai-models-in-2026">remowork.life</a>; <a target="_blank" rel="noopener" href="https://earnbeyondborders.com/legit-ai-training-jobs-remote-worldwide/">earnbeyondborders</a>). Справка Prolific относит Казахстан к странам с небольшой базой участников, то есть резиденты Казахстана могут участвовать (<a target="_blank" rel="noopener" href="https://researcher-help.prolific.com/en/articles/445224-who-are-the-participants-on-prolific">Prolific</a>). Но у роли есть отдельная версия «Kazakh – US», так что часть вакансий открыта только жителям США (<a target="_blank" rel="noopener" href="https://hiddenjobs.dev/company/prolificacademicltd/jobs/ai-trainer-kazakh-us-f0b7ef93/">hiddenjobs.dev</a>).</p>
+<p>Список работодателей длиннее, чем был в 30-дневном отчёте. TELUS Digital набирает «Personalized Internet Assessor – Kazakh speakers in Kazakhstan» на частичную занятость начального уровня. По архиву hh.kz 2019 года видно, что программа работает давно (<a target="_blank" rel="noopener" href="https://himalayas.app/companies/telus-international-ai-inc/jobs/personalized-internet-assessor-kazakh-speakers-in-kazakhstan">Himalayas</a>; <a target="_blank" rel="noopener" href="https://almaty.hh.kz/vacancy/34765449">hh.kz</a>). Sigma ведёт «Kazakh linguistic projects» по коммерческому договору и требует свободный английский (<a target="_blank" rel="noopener" href="https://careers.sigma.ai/jobs/4881964-kazakh-linguistic-projects-remote">Sigma</a>). Meridial искал специалиста по казахскому уровня C1/C2. Агрегатор показывает диапазон <strong>$8–65/час</strong>, но срок публикации истёк 25.09.2026 (<a target="_blank" rel="noopener" href="https://www.landearly.com/companies/agency/jobs/kazakh-language-specialist-freelance-ai-trainer-project-95b4a2d2">LandEarly</a>). Похожие роли есть у AuraOne и OpenTrain (<a target="_blank" rel="noopener" href="https://www.glassdoor.com/job-listing/kazakh-language-expert-auraone-human-data-JV_KO0,22_KE23,41.htm?jl=1010210607227">Glassdoor</a>; <a target="_blank" rel="noopener" href="https://www.opentrain.ai/jobs/kazakh-language-expert--cmry9htrb000q04lbjovvxl0d/">OpenTrain</a>). Более длинный срок важен прежде всего ради роста по уровням. По гайду Mindrift за октябрь 2026 года, задачи «для всех» обычно оплачиваются <strong>ниже $20/час</strong>, а специализированные проекты — <strong>$30–90/час</strong> (<a target="_blank" rel="noopener" href="https://getaiwork.com/articles/mindrift-review/">getAIwork</a>). Обзоры выделяют уровень «Multilingual AI Tutor» со ставкой <strong>$22–32/час</strong> (<a target="_blank" rel="noopener" href="https://www.remogrid.com/blog/reviews/mindrift-ai-tutor-review-earnings-and-exam-2026">remogrid</a>). У Outlier русскоязычным экспертам-математикам обещают в среднем <strong>$40/час</strong> (<a target="_blank" rel="noopener" href="https://job-boards.greenhouse.io/outlier/jobs/4529370005">Greenhouse</a>). Но доступность Outlier для Казахстана не подтверждена, а смена страны через VPN нарушает его правила (<a target="_blank" rel="noopener" href="https://www.eneba.com/hub/reviews/is-outlier-legit/">eneba</a>). Отсюда практический вывод. Студенту технической, юридической или медицинской специальности стоит подаваться на экспертные треки на казахском или русском, а не только на общие языковые. Английский уровня «средний и выше» достаточен для оценочных задач, но экзамены и инструкции написаны на английском, и его подтягивание напрямую повышает ставку.</p>
+<p>Честное ожидание в первые 1–3 месяца — нерегулярная работа по 5–15 часов в неделю за $10–25/час, то есть <strong>$200–1 200 (≈89–534 тыс. ₸) в месяц</strong> с большими колебаниями. Это оценка исследователей по заявленным ставкам и жалобам на неровный поток задач, а не наблюдаемый доход. Заполнить 20–30 часов в неделю одной платформой почти невозможно. Поэтому рабочая стратегия — сразу держать 3–4 профиля (Welo, TELUS, Prolific, Sigma, проекты Mindrift с допуском Казахстана).</p>
+<h3>Перевод: деньги в EN↔KZ для иностранцев, а не RU→KZ для местных</h3>
+<p>Разрыв между внутренним и внешним рынком перевода — порядок величины. На Kaspi Объявлениях перевод RU→KZ предлагают <strong>от 900 ₸ за страницу (≈$2)</strong> (<a target="_blank" rel="noopener" href="https://obyavleniya.kaspi.kz/a/perevod-teksta-107449395">Kaspi</a>). Самостоятельно выставленные ставки EN→KZ на ProZ составляют <strong>$0,07–0,16 за слово ($20–50/час)</strong> (<a target="_blank" rel="noopener" href="https://www.proz.com/profile/4751267">ProZ</a>; <a target="_blank" rel="noopener" href="https://www.proz.com/profile/96758">ProZ</a>). Казахстанские трёхъязычные переводчики на Upwork работают по <strong>$23–33/час</strong>, профиль из Алматы с 334 заказами — по $33, а «типичную» ставку Upwork для Казахстана называет <strong>$15–25/час</strong> (<a target="_blank" rel="noopener" href="https://www.upwork.com/hire/translators/kz/almaty/">Upwork Almaty</a>; <a target="_blank" rel="noopener" href="https://www.upwork.com/hire/translators/kz/">Upwork</a>). Сам рынок растёт: объём переводческих услуг в Казахстане за 2025 год — <strong>39,8 млрд ₸ (≈$89 млн), +17,4%</strong>, рост обеспечил письменный перевод (<a target="_blank" rel="noopener" href="https://rus.azattyq-ruhy.kz/analytics/114617-ii-ne-otmeniaet-perevodchikov-spros-na-iazykovye-uslugi-v-kazakhstane-prodolzhaet-rasti">Azattyq Ruhy</a>). Эксперт Kazpravda пишет, что большинство казахоязычных текстов — переводы с русского, а неквалифицированный перевод тормозит развитие официально-делового казахского (<a target="_blank" rel="noopener" href="https://kazpravda.kz/n/ne-prosto-perevodit-a-dumat/">Kazpravda</a>). Это ниша для тех, кто переводит качественно. Цитируемые ставки принадлежат опытным профилям. Новичку стоит рассчитывать на $8–15/час на первых заказах и примерно на 6–12 месяцев до $0,07–0,10 за слово (оценка). Пара RU↔EN забита исполнителями из СНГ, поэтому продавать стоит связку «EN→KZ + RU: локализация для выхода в Центральную Азию». Сюда же относятся постредактирование машинного перевода и проверка ответов ИИ на казахском, которые пересекаются с разметкой.</p>
+<h3>Репетиторство, модерация и контент: где язык помогает меньше, чем кажется</h3>
+<p>Остальные языковые пути уступают двум первым либо по ставке, либо по совместимости с учёбой. Казахский как иностранный на Preply обычно стоит <strong>$10–30/час</strong>, страница грамматики показывает в среднем <strong>$12/час</strong> (<a target="_blank" rel="noopener" href="https://preply.com/en/blog/best-online-kazakh-course">Preply</a>; <a target="_blank" rel="noopener" href="https://preply.com/en/online/s/kazakh-grammar-tutors">Preply</a>). Конкуренция ниже, чем у русского, но и учеников мало. Удалённая модерация в Казахстане платит в среднем <strong>317 тыс. ₸ (≈$712)</strong> при разбросе 150–850 тыс. (<a target="_blank" rel="noopener" href="https://kazahstan.gorodrabot.kz/%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80">GorodRabot</a>). Но это в основном полные смены, а Teleperformance набирала говорящих на казахском, русском и английском в Тбилиси и прямо отказывала в удалёнке (<a target="_blank" rel="noopener" href="https://t.me/s/jobkz_1/20907?q=#content">JobKZ Telegram</a>). С контентом язык работает наоборот. Доход YouTube зависит от страны зрителя, а не от языка ролика. Казахстан в списке стран с самой низкой оплатой за 1 000 просмотров, тогда как в США, Канаде и Австралии RPM составляет <strong>$6–20</strong> (<a target="_blank" rel="noopener" href="https://partnerkin.com/blog/articles/Skolko_platit_YouTube_za_1000">Partnerkin</a>). Значит, для заработка на рекламе английский важнее казахского. Казахоязычный канал имеет смысл как витрина и воронка для собственных услуг: репетиторства, перевода, автоматизации.</p>
+<h2 id="s2">Сравнение путей: через год лидируют услуги, а не товарка</h2>
+<p>Ниже все пути сведены к одному профилю: 20–30 часов в неделю во время учёбы. Колонка «Опорная ставка» опирается на источники. Колонки «3/6/12 мес.» — <strong>мои оценки</strong> чистого месячного дохода на конец указанного месяца, выведенные из этих ставок и из траекторий в исследовательских заметках. Это не наблюдаемые результаты. Доход в долларах пересчитан по 445 ₸/$.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Путь</th>
+<th>Стартовые вложения</th>
+<th>Опорная ставка (источник)</th>
+<th>3 мес.*</th>
+<th>6 мес.*</th>
+<th>12 мес.*</th>
+<th>Главный риск</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ИИ-разметка KZ/RU/EN</td>
+<td>≈0 ₸</td>
+<td>$12–26/ч (<a target="_blank" rel="noopener" href="https://hiddenjobs.dev/company/prolificacademicltd/jobs/ai-trainer-kazakh-648f51a1/">Prolific</a>, <a target="_blank" rel="noopener" href="https://remowork.life/blog/top-ai-training-platforms-that-pay-you-to-train-ai-models-in-2026">remowork</a>)</td>
+<td>90–530 тыс. ₸</td>
+<td>180–530 тыс.</td>
+<td>250–700 тыс.</td>
+<td>поток задач, допуск страны, проект может закрыться</td>
+</tr>
+<tr>
+<td>Перевод/локализация EN↔KZ(+RU)</td>
+<td>≈0 ₸ + connects</td>
+<td>$15–33/ч (<a target="_blank" rel="noopener" href="https://www.upwork.com/hire/translators/kz/">Upwork</a>)</td>
+<td>0–130 тыс.</td>
+<td>180–400 тыс.**</td>
+<td>360–670 тыс.</td>
+<td>долгий набор отзывов</td>
+</tr>
+<tr>
+<td>ИИ-боты и автоматизация для МСБ + n8n на Upwork</td>
+<td>0–50 тыс. ₸ (подписки)</td>
+<td>50–400 тыс. ₸ за проект (<a target="_blank" rel="noopener" href="https://aoe.kz/chat_bot/">aoe.kz</a>, <a target="_blank" rel="noopener" href="https://a-lux.kz/telegram-bot-integraciya-crm/">a-lux.kz</a>); медиана $23/ч (<a target="_blank" rel="noopener" href="https://devsnipe.com/market/rates/n8n-automation">devsnipe</a>)</td>
+<td>50–200 тыс.</td>
+<td>150–400 тыс.</td>
+<td>300–800 тыс.</td>
+<td>демпинг, простые боты дешевеют</td>
+</tr>
+<tr>
+<td>SMM/мобилография → мини-агентство</td>
+<td>0–100 тыс. ₸ (свет, микрофон)</td>
+<td>≈200 тыс. ₸/мес за клиента (<a target="_blank" rel="noopener" href="https://workspace.ru/almaty/social-networks/">Workspace</a>)</td>
+<td>100–300 тыс.</td>
+<td>300–600 тыс.</td>
+<td>0,5–1,5 млн выручки</td>
+<td>отток клиентов, потолок часов</td>
+</tr>
+<tr>
+<td>Онлайн-группы ЕНТ (каз./рус.)</td>
+<td>30–100 тыс. ₸/мес на рекламу</td>
+<td>9,6–27,5 тыс. ₸/мес за место (<a target="_blank" rel="noopener" href="https://zoon.kz/astana/trainings/tsentr_obucheniya_i_perevodov_qaiman_education/price/">Zoon</a>)</td>
+<td>100–200 тыс.</td>
+<td>200–600 тыс. (сезон)</td>
+<td>0,5–1 млн (мини-школа)</td>
+<td>летний провал, бесплатные уроки НЦТ</td>
+</tr>
+<tr>
+<td>IT-найм (поддержка, QA, 1С, стажировка)</td>
+<td>0 ₸ (бесплатное обучение)</td>
+<td>медиана ожиданий 208 тыс. ₸ (<a target="_blank" rel="noopener" href="https://the-tech.kz/skolko-zarabatyvayut-programmisty-v-kazahstane-v-2026-godu/">the-tech.kz</a>)</td>
+<td>0 (учёба)</td>
+<td>0–300 тыс.</td>
+<td>200–350 тыс.</td>
+<td>очередь 13 человек на место, полный день</td>
+</tr>
+<tr>
+<td>Магазин на Kaspi (товары из Китая)</td>
+<td>0,3–2 млн ₸</td>
+<td>комиссия 7,3–15,5% (<a target="_blank" rel="noopener" href="https://konabayev.com/ru/blog/kaspi-commission-2026/">konabayev</a>)</td>
+<td>0 или убыток</td>
+<td>50–200 тыс. на 1 млн капитала у удачных</td>
+<td>200–500 тыс. у меньшинства; медиана ≈0</td>
+<td>заморозка капитала, демпинг</td>
+</tr>
+<tr>
+<td>YouTube/Telegram-канал</td>
+<td>0–100 тыс. ₸</td>
+<td>низкий RPM Казахстана (<a target="_blank" rel="noopener" href="https://partnerkin.com/blog/articles/Skolko_platit_YouTube_za_1000">Partnerkin</a>)</td>
+<td>0</td>
+<td>0 / бартер</td>
+<td>50–300 тыс. у меньшинства</td>
+<td>годы до порога монетизации</td>
+</tr>
+<tr>
+<td>Депозит или ОВГЗ (на 1 млн ₸)</td>
+<td>1 млн ₸</td>
+<td>17–19% вклад; 15–18,8% ОВГЗ (<a target="_blank" rel="noopener" href="https://finratings.kz/news/14873-gosudarstvennye-obligatsii-kazakhstana-chto-eto-kak-rabotaiut-i-skolko-mozhno-zarabotat/">FinRatings</a>)</td>
+<td>≈14–16 тыс.</td>
+<td>≈14–16 тыс.</td>
+<td>≈14–16 тыс.</td>
+<td>почти нет (КФГД до 20 млн ₸)</td>
+</tr>
+</tbody>
+</table></div>
+<p>* Оценки автора, не данные источников. ** Вместе с ИИ-разметкой.</p>
+<p>Из таблицы следуют три вывода. Во-первых, никакой путь не даёт в одиночку больше 300 тыс. ₸ к третьему месяцу, зато сумма двух некапиталоёмких треков (разметка плюс боты или группы ЕНТ) к шестому месяцу выходит на уровень медианной зарплаты страны, <strong>348 415 ₸</strong> (<a target="_blank" rel="noopener" href="https://stat.gov.kz/ru/industries/labor-and-income/stat-wags/publications/352971/">stat.gov.kz</a>). Во-вторых, к двенадцатому месяцу высший потолок у моделей с наймом исполнителей (агентство, мини-школа), потому что только они обходят лимит в 20–30 личных часов. Но речь о выручке: при субподряде за 40–60% чека студенту остаётся 30–50% (оценка). В-третьих, долларовые треки защищают от ослабления тенге. Если реальный курс ближе к 485, чем к 445, тенговый эквивалент доходов в долларах на ~9% выше, чем указано в таблице.</p>
+<h2 id="s3">IT-профессия за год: ставка на 1С, CRM и автоматизацию, а не на фронтенд</h2>
+<h3>Рынок джунов сжимается, и это меняет выбор специальности</h3>
+<p>Для студента, который хочет за год получить IT-профессию, главный факт 2026 года — нехватка мест для новичков. По подсчёту Taylor.kz за апрель 2026 года, вакансий для джунов около <strong>490, то есть 8% рынка</strong>, и автор называет это «кризисом входа» (<a target="_blank" rel="noopener" href="https://taylor.kz/blog/it-rynok-kazaxstana-aprel-2026-polnyi-obzor-i-trendy">Taylor.kz</a>). На одну IT-позицию в среднем претендуют <strong>13 кандидатов</strong> (<a target="_blank" rel="noopener" href="https://24.kz/ru/news/social/755886-samye-vostrebovannye-it-vakansii-v-kazakhstane">24.kz</a>). В ML/AI доля джунов — <strong>6,5% (62 позиции)</strong> (<a target="_blank" rel="noopener" href="https://taylor.kz/blog/mlai-inzener-v-kazaxstane-2026-cem-zanimaetsia-skolko-platit-i-kak-voiti-v-professiiu-2">Taylor.kz</a>). При этом <strong>85% казахстанских компаний</strong> говорят, что им уже нужны ИИ-специалисты (<a target="_blank" rel="noopener" href="https://digitalbusiness.kz/2026-02-05/kazahstanskie-biznesmeni-rasskazali-kogo-kompanii-budut-uderzhivat-lyuboy-tsenoy/">Digital Business</a>). Работодатели ждут портфолио на GitHub и умения работать с ИИ-инструментами (<a target="_blank" rel="noopener" href="https://taylor.kz/blog/zarplata-java-razrabotcika-v-kazaxstane-2026-ot-junior-do-senior">Taylor.kz</a>). По оценкам зарплат нет согласия. Курсы и рекрутинговые блоги обещают джунам 300–500 тыс. ₸, но надёжнее ориентироваться на резюме hh.kz: ожидания айтишников с опытом до года в I квартале 2026 года — <strong>~208 тыс. ₸</strong> (<a target="_blank" rel="noopener" href="https://the-tech.kz/skolko-zarabatyvayut-programmisty-v-kazahstane-v-2026-godu/">the-tech.kz</a>). Я считаю, что меньше всего от ИИ пострадают профессии, привязанные к местным бизнес-процессам: 1С, внедрение CRM, поддержка, автоматизация. Они требуют работы с клиентом на русском и казахском и знания местных систем. Это рассуждение, а не измерение. Типовой фронтенд и «просто Python» сильнее всего сжимаются под натиском генераторов кода.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Направление</th>
+<th>До первого дохода*</th>
+<th>Зарплата джуна в КЗ</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Техподдержка / helpdesk</td>
+<td>1–3 мес.</td>
+<td>150–250 тыс. ₸ чистыми (<a target="_blank" rel="noopener" href="https://hh.kz/vacancies/it-support-specialist/bez_opyta_raboty">hh.kz</a>)</td>
+<td>низкий порог; интеграторы CRM берут без опыта от 200 тыс. (<a target="_blank" rel="noopener" href="https://hh.ru/vacancy/135917777">hh.ru</a>)</td>
+</tr>
+<tr>
+<td>Ручное QA</td>
+<td>3–5 мес.</td>
+<td>150–300 тыс. ₸ (<a target="_blank" rel="noopener" href="https://hh.kz/vacancies/junior-qa-engineer/polnaya_zanyatost">hh.kz</a>)</td>
+<td>много вакансий, длинная очередь</td>
+</tr>
+<tr>
+<td>1С (стажёр → разработчик)</td>
+<td>3–6 мес. до стажёра</td>
+<td>160–250 тыс. стажёр (<a target="_blank" rel="noopener" href="https://hh.kz/vacancies/stazher_1s">hh.kz</a>); 300 тыс.+ при опыте 1–3 года</td>
+<td>есть стажировки с частичной занятостью (<a target="_blank" rel="noopener" href="https://hh.kz/vacancies/programmist_1s_stazher/podrabotka">hh.kz</a>); медиана удалённого 1С <strong>1,18 млн ₸ (≈$2 645)</strong>, но с перекосом в сеньоров (<a target="_blank" rel="noopener" href="https://taylor.kz/salaries/1c/remote">Taylor.kz</a>)</td>
+</tr>
+<tr>
+<td>No-code/ИИ-автоматизация</td>
+<td>2–4 мес. до первого проекта</td>
+<td>проектная оплата (см. выше)</td>
+<td>Upwork: начальный уровень ~$14/ч, медиана $25/ч (<a target="_blank" rel="noopener" href="https://www.upworkxray.com/blog/ai-automation-freelance-rates-upwork">UpworkXray</a>)</td>
+</tr>
+<tr>
+<td>UX/UI</td>
+<td>5–9 мес.</td>
+<td>медиана джуна ~200 тыс., UX/UI в целом 463,5 тыс. (<a target="_blank" rel="noopener" href="https://designjobs.kz/salaries">designjobs.kz</a>)</td>
+<td>маленький рынок, «джун+» часто требует 3+ лет</td>
+</tr>
+<tr>
+<td>Аналитик данных</td>
+<td>6–10 мес.</td>
+<td>реальная вакансия от 400 тыс. (<a target="_blank" rel="noopener" href="https://hirekz.com/job/junior-data-analyst-smart-bridge-xy/">hirekz</a>)</td>
+<td>мало мест без опыта</td>
+</tr>
+</tbody>
+</table></div>
+<p>* Оценки исследователей для 20–30 ч/нед с нуля, не из источников.</p>
+<h3>Бесплатные программы: окно Tech Orda откроется летом 2027 года</h3>
+<p>Государственных и бесплатных вариантов достаточно, но у каждого свой календарь. <strong>Tech Orda</strong> (Astana Hub) даёт гражданам 18–45 лет ваучер <strong>до 500 тыс. ₸ (≈$1 124)</strong> на очное обучение или до 400 тыс. ₸ на онлайн. Курс должен длиться не меньше 6 месяцев в аккредитованной школе, IT-образование не требуется (<a target="_blank" rel="noopener" href="https://astanahub.com/en/techorda/">Astana Hub</a>). Приём сезона 2026 года закрылся в сентябре (<a target="_blank" rel="noopener" href="https://raem.kz/grant/tech-orda-2026/">raem.kz</a>). Если график повторится, следующее окно — примерно август–сентябрь 2027 года. Это предположение. Перед подачей стоит прочитать договор школы: некоторые требуют штраф за незавершённый курс (<a target="_blank" rel="noopener" href="https://productmasters.kz/techorda">Product Masters</a>; <a target="_blank" rel="noopener" href="https://raem.kz/tech-orda-2026-kak-poluchit-do-500-tysyach-tenge-na-it-kurs-i-ne-ostatsya-dolzhnym-shkole/">raem.kz</a>). <strong>Tomorrow School</strong> (преемник Alem School) бесплатна и учит в формате peer-to-peer на платформе 01 Edu. Отбор включает когнитивные игры и «бассейн» на ~26–27 дней, программа рассчитана на два года, сеть школ расширяется на 14 регионов (<a target="_blank" rel="noopener" href="https://the-tech.kz/kak-rabotaet-tomorrow-school-i-kto-mozhet-stat-ee-studentom/">the-tech.kz</a>; <a target="_blank" rel="noopener" href="https://www.gov.kz/org/maidd/press/news/details/1208122?lang=ru">gov.kz</a>). Для студента вуза это серьёзная нагрузка, и совместимость с парами нужно проверять. Начать можно прямо сейчас: на Skills Enbek <strong>385 из 568 курсов бесплатны</strong>, а сертификат автоматически попадает в резюме на Enbek.kz (<a target="_blank" rel="noopener" href="https://steppenews.kz/obshhestvo/besplatnoe-obuchenie-skills-enbek-sertifikat/">steppenews.kz</a>). У EPAM есть бесплатные онлайн-программы стажёров для Казахстана (<a target="_blank" rel="noopener" href="https://the-tech.kz/karera-v-it-aktualnye-stazhirovki-i-programmy-dlya-studentov-i-shkolnikov/">the-tech.kz</a>), Google Cybersecurity Certificate на Coursera открыт без дедлайна (<a target="_blank" rel="noopener" href="https://youth.kz/article/stipendii-granty-i-karera-vozmozhnosti-avgusta-dlya-molodezhi-p3a6aTsT7oh23Y7ZCk7u">youth.kz</a>).</p>
+<h3>Стажировки — это воронка найма, а не источник дохода</h3>
+<p>Оплачиваемые стажировки подтверждены у нескольких крупных компаний. Но платят они ниже рынка и почти все требуют полного дня в офисе. <strong>Kolesa Academy</strong> длится 2 месяца в Алматы и платит <strong>150 тыс. ₸ в месяц чистыми (≈$337)</strong>. Наборы идут несколько раз в год, и, по данным компании, большинство выпускников остаются в IT (<a target="_blank" rel="noopener" href="https://kolesa.group/education/academy">Kolesa Group</a>). <strong>Halyk Start</strong> — оплачиваемая шестимесячная программа для студентов IT-специальностей с 3-го курса и выпускников (<a target="_blank" rel="noopener" href="https://halykbank.kz/index.php/en/about/career/halyk-start">Halyk Bank</a>). <strong>Kaspi Lab</strong> в 2025 году принимал заявки до 31 августа и проходил в сентябре–октябре. Лучших выпускников пригласили на оплачиваемую стажировку (<a target="_blank" rel="noopener" href="https://finratings.kz/news/6519-kaspi-kz-ishchet-talanty-dlia-stazhirovki-po-kliuchevym-napravleniiam-banka/">finratings.kz</a>). В Beeline Казахстан оффер получают <strong>52%</strong> стажёров (<a target="_blank" rel="noopener" href="https://digitalbusiness.kz/2026-05-05/offer-poluchayut-52-kogo-berut-na-stazhirovku-v-beeline-kazahstan-i-pochemu-odnih-hard-skillov-nedostatochno/">Digital Business</a>). Ни у одной казахстанской программы в найденных источниках не описан график, совместимый с учёбой. Поэтому их логично планировать на летние каникулы. Удалённая работа на иностранные компании реальна: <strong>14%</strong> казахстанских разработчиков работают в международных компаниях, <strong>12%</strong> — удалённо на зарубежных работодателей, и платят там в 2–3 раза больше (<a target="_blank" rel="noopener" href="https://taylor.kz/blog/zarplata-java-razrabotcika-v-kazaxstane-2026-ot-junior-do-senior">Taylor.kz</a>). Но данные не показывают, что этот путь открыт джунам. На горизонте года «удалёнка» для студента — это фриланс, а не штатная должность.</p>
+<h2 id="s4">Сбережения: депозит под 17–19% — планка, которую бизнес редко берёт</h2>
+<h3>Что сбережения приносят без всякого бизнеса</h3>
+<p>Нацбанк 23 октября 2026 года снизил базовую ставку до <strong>15,75%</strong>, инфляция в сентябре составила <strong>9,3%</strong> и замедляется двенадцатый месяц подряд (<a target="_blank" rel="noopener" href="https://24.kz/ru/news/economyc/801313-natsbank-kazakhstana-snizil-bazovuyu-stavku-do-15-75">24.kz</a>). В начале ноября пять крупных банков снизили максимальные ставки по тенговым вкладам на 0,38–1,58 п.п., но «получить до 20% годовых ещё можно» (<a target="_blank" rel="noopener" href="https://www.zakon.kz/finansy/6537099-depozity-v-kazakhstane-stavki-padayut-no-poluchit-do-20-godovykh-eshche-mozhno.html">Zakon.kz</a>). В мае 2026 года один банк впервые позволил зафиксировать <strong>20,5%</strong> на 12 месяцев (<a target="_blank" rel="noopener" href="https://digitalbusiness.kz/2026-05-05/odin-kazahstanskiy-bank-razreshil-sohranit-godovuyu-stavku-20-5-na-tseliy-god/">Digital Business</a>). КФГД гарантирует сберегательные тенговые вклады <strong>до 20 млн ₸</strong> в одном банке, а текущие счета и карты — только до 10 млн (<a target="_blank" rel="noopener" href="https://informburo.kz/novosti/kakie-depozity-byli-samymi-vygodnymi-v-kazaxstane-v-noiabre-obzor-kfgd">Informburo/КФГД</a>). Гособлигации Минфина в 2026 году приносили <strong>14,97–18,76%</strong> в зависимости от срока, и купон по ним освобождён от ИПН (<a target="_blank" rel="noopener" href="https://finratings.kz/news/14873-gosudarstvennye-obligatsii-kazakhstana-chto-eto-kak-rabotaiut-i-skolko-mozhno-zarabotat/">FinRatings</a>). Мой расчёт: 1 млн ₸ под 17–19% даёт <strong>~14–16 тыс. ₸ в месяц</strong>, 2 млн — ~28–32 тыс. Реальная доходность за вычетом инфляции — около 8–10% годовых. Пока ставка снижается, выгоднее зафиксировать её на год (срочный вклад или ОВГЗ), чем держать плавающую. Налогообложение процентов по вкладам по новому Налоговому кодексу в ходе исследования не проверено.</p>
+<h3>Kaspi-магазин: юнит-экономика оставляет мало места для ошибки</h3>
+<p>Товарный бизнес — единственный путь из сравнения, где сбережения действительно работают как капитал. Именно поэтому его стоит считать честно. Комиссия Kaspi Магазина, по вторичному блогу, составляет <strong>7,3%, 12,5% или 15,5%</strong> с НДС в зависимости от категории (<a target="_blank" rel="noopener" href="https://konabayev.com/ru/blog/kaspi-commission-2026/">konabayev.com</a>). С 5 января 2026 года НДС считается отдельно (<a target="_blank" rel="noopener" href="https://guide.kaspi.kz/partner/ru/shop/conditions/q4468">Kaspi Гид</a>). Реклама — от <strong>3 ₸ за клик</strong> при дневном бюджете от 1 000 ₸, а со 2 ноября 2026 года она автоматически показывается и в Google, TikTok, Instagram, Facebook и Threads (<a target="_blank" rel="noopener" href="https://guide.kaspi.kz/partner/ru/marketing/advert_goods/q2088">Kaspi Гид</a>; <a target="_blank" rel="noopener" href="https://guide.kaspi.kz/partner/ru/marketing/external_advertising/q5409">Kaspi Гид</a>). Практик на AstanaHub предупреждает, что Kaspi делит расход на рекламу на оформленные, а не на выполненные заказы, поэтому реальная цена заказа выше, чем показывает кабинет (<a target="_blank" rel="noopener" href="https://astanahub.com/en/blog/skolko-na-samom-dele-stoit-zakaz-s-reklamy-na-kaspi-formula-kotoruiu-pochti-nikto-ne-schitaet">AstanaHub</a>). Ввоз из Китая, по одному бухгалтерскому источнику, с 1 июля 2026 года облагается пошлиной 5%, но не меньше 1 евро за кг, плюс импортный НДС 16% (<a target="_blank" rel="noopener" href="https://mybuh.kz/useful/polnyy-paket-dokumentov-dlya-prodazhi-tovarov-iz-kitaya-na-kaspi-i-wildberries-v-2026.html">mybuh.kz</a>).</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Статья (товар за 6 000 ₸, иллюстрация)</th>
+<th>Сумма</th>
+<th>Основа</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Комиссия Kaspi 12,5%</td>
+<td>750 ₸</td>
+<td>ставка из блога</td>
+</tr>
+<tr>
+<td>Доставка Kaspi</td>
+<td>~200–500 ₸</td>
+<td>тариф для заказов &gt;5 000 ₸ не извлечён, оценка</td>
+</tr>
+<tr>
+<td>Налог упрощёнки 4%</td>
+<td>240 ₸</td>
+<td>базовая ставка НК-2026</td>
+</tr>
+<tr>
+<td>Реклама при ДРР 10–15%</td>
+<td>600–900 ₸</td>
+<td>оценка</td>
+</tr>
+<tr>
+<td><strong>Итого платформа + налог + реклама</strong></td>
+<td><strong>~1 800–2 400 ₸ (30–40% цены)</strong></td>
+<td>расчёт</td>
+</tr>
+<tr>
+<td>Себестоимость с карго, пошлиной и упаковкой, чтобы осталось ~1 000 ₸ (15–20%)</td>
+<td>≤2 500–3 000 ₸</td>
+<td>расчёт</td>
+</tr>
+</tbody>
+</table></div>
+<p>Это расчёт из исследовательских заметок, а не реальный кейс. Из него следует привычное правило «закупка не дороже трети цены на Kaspi». Статистика по соседней площадке отрезвляет. По данным Forbes.kz за 2024 год, из более чем 50 тыс. казахстанских продавцов Wildberries реальные продажи были у <strong>8 087</strong>, а у <strong>50,3%</strong> активных оборот меньше <strong>50 тыс. ₸ в месяц</strong>. Главная причина — нехватка оборотных средств (<a target="_blank" rel="noopener" href="https://forbes.kz/articles/wildberries-pochemu-99-kazahstanskih-prodavtsov-imeyut-oborot-menee-50tystenge">Forbes.kz</a>). Данные устарели, но порядок цифр говорит сам за себя. Платформенный риск тоже реален: летом 2026 года WB поднял комиссии в России до 43,5% по отдельным схемам (<a target="_blank" rel="noopener" href="https://finratings.kz/news/15159-komissii-wildberries-vyrastut-do-43-5-chto-eto-znachit-dlia-kazakhstana/">FinRatings</a>). Моя оценка для 1 млн ₸ капитала: за 3 месяца — ноль или убыток, за 6 — 50–200 тыс. ₸ в месяц при удачной нише, за 12 — 200–500 тыс. у меньшинства при реинвестировании. Медианный новичок выходит примерно в ноль, то есть проигрывает депозиту с его гарантированными ~15 тыс. в месяц и вдобавок забирает 15–25 часов в неделю. Публичных кейсов студентов-селлеров Kaspi с цифрами за 2026 год найти не удалось.</p>
+<h3>Где деньги работают лучше: в услугах без капитала</h3>
+<p>Сервисные модели почти не требуют денег, поэтому их доход не нужно сравнивать с депозитом. Его нужно сравнивать с альтернативной стоимостью часа. Средняя цена ведения соцсетей у агентств Алматы — около <strong>200 тыс. ₸ в месяц</strong>, час SMM-специалиста — ~2 500 ₸ (<a target="_blank" rel="noopener" href="https://workspace.ru/almaty/social-networks/">Workspace</a>; <a target="_blank" rel="noopener" href="https://workspace.ru/almaty/smm/">Workspace</a>). Лендинг «под ключ» стоит <strong>70–160 тыс. ₸</strong> (<a target="_blank" rel="noopener" href="https://obyavleniya.kaspi.kz/a/sayt-123827324">Kaspi</a>). Нижняя граница для студента — штатная зарплата удалённого SMM: 270–300 тыс. ₸ до налогов (<a target="_blank" rel="noopener" href="https://hh.kz/vacancy/138075260">hh.kz</a>). Боты для бизнеса дают самую высокую маржу на час. Простой сценарный бот у студий стоит <strong>от 50–150 тыс. ₸</strong> (<a target="_blank" rel="noopener" href="https://www.awstudio.kz/razrabotka-chat-botov.html">AW Studio</a>), интеграция с amoCRM/Битрикс24/1С — <strong>от 400 тыс.</strong> (<a target="_blank" rel="noopener" href="https://a-lux.kz/telegram-bot-integraciya-crm/">A-LUX</a>). Потолок задаёт SaaS-альтернатива <strong>от 24 990 ₸ в месяц</strong> (<a target="_blank" rel="noopener" href="https://hoookai.com/blog/chat-bot-dlya-prodazh-kazakhstan.html">HookAI</a>), а на OLX уже встречаются боты «от 20 тыс. ₸» (<a target="_blank" rel="noopener" href="https://obyavleniya.kaspi.kz/a/chat-bot-dlya-whatsapp-122739740">Kaspi</a>). Поэтому зарабатывать стоит на интеграциях и ежемесячной поддержке, а не на шаблонных ботах. Онлайн-группы подготовки к ЕНТ экономически привлекательны: 8 учеников по 25 тыс. ₸ дают ~200 тыс. в месяц (расчёт). Однако спрос сезонный, только по Алматы в категории ~<strong>4 774</strong> объявлений (<a target="_blank" rel="noopener" href="https://obyavleniya.kaspi.kz/almaty/uslugi/k--%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B5%D0%BD%D1%82/">Kaspi</a>), а НЦТ запустил бесплатные онлайн-уроки и заявил, что платные курсы для ЕНТ не обязательны (<a target="_blank" rel="noopener" href="https://www.zakon.kz/obshestvo/6509247-v-natstsentre-testirovaniya-vyskazalis-o-platnykh-kursakh-k-ent.html">Zakon.kz</a>). Туризм — растущая, но малоизученная ниша: <strong>15,7 млн</strong> иностранных посетителей в 2025 году (<a target="_blank" rel="noopener" href="https://kapital.kz/economic/149764/v-kazahstan-za-tri-mesyaca-priehali-3-mln-inostrannyh-turistov.html">Kapital.kz</a>), поток из Китая вырос на <strong>46,8%</strong> (<a target="_blank" rel="noopener" href="https://kazpravda.kz/n/chislenost-kitayskih-turistov-v-kazahstane-vyrosla/">Kazpravda</a>). Основной поток при этом идёт из стран СНГ, а цен на англоязычные экскурсии найти не удалось. Итоговая рекомендация: держать 80–90% сбережений на сберегательном вкладе или в ОВГЗ как подушку, которая позволяет не брать низкооплачиваемую офлайн-работу и учиться. На инструменты (подписки на ИИ-сервисы, connects, свет и микрофон, реклама групп) тратить 10–20%. Тест товарного бизнеса — только на сумму, которую не жалко потерять (до ~300 тыс. ₸), и не раньше, чем появится стабильный сервисный доход.</p>
+<h2 id="s5">Налоги и вывод денег: ИП на упрощёнке для долларовых доходов</h2>
+<p>Базовые правила 2026 года описаны в 30-дневном отчёте. Здесь — только то, что касается новых путей. Иностранный доход физического лица без статуса облагается ИПН <strong>10%</strong> и декларируется по форме 270.00 до 15 сентября следующего года (<a target="_blank" rel="noopener" href="https://finance.kz/articles/nalogooblozhenie-dohodov-iz-za-rubezha-v-kazahstane-v-2026-godu-chto-nuzhno-znat">finance.kz</a>). ИП на упрощённой декларации платит базово <strong>4%</strong> от дохода, но маслихаты вправе менять ставку: в Алматы и Астане <strong>3%</strong>, в Шымкенте <strong>2%</strong> (<a target="_blank" rel="noopener" href="https://pro1c.kz/articles/prochee/aktualnyy-spisok-maslikhatov-ponizivshikh-stavku-po-snr-na-osnove-uproshchennoy-deklaratsii/">pro1c.kz</a>). Декларация 910.00 сдаётся раз в полугодие, а годовой лимит дохода — 600 000 МРП (<a target="_blank" rel="noopener" href="https://kapital.kz/economic/143496/vstupil-v-silu-novyj-nalogovyj-kodeks.html">Kapital.kz</a>; <a target="_blank" rel="noopener" href="https://digitalbusiness.kz/2025-07-31/uznali-kakuyu-formu-budut-sdavat-ip-na-novoy-uproshchenke-s-2026-goda/">Digital Business</a>). Сверху ИП платит за себя ВОСМС <strong>5 950 ₸</strong> в месяц, ОПВ 10% и СО 5% от заявленного дохода (<a target="_blank" rel="noopener" href="https://itsheff.kz/howto/stati/platezhi-ip-za-sebya-v-2026-godu-polnyy-razbor-dlya-biznesa.html">itsheff.kz</a>). При заявленной одной МЗП это около 18,7 тыс. ₸ в месяц. Мой расчёт для Алматы и Астаны: разница между 10% ИПН и 3% упрощёнки покрывает эти фиксированные платежи при доходе примерно <strong>от 150–270 тыс. ₸ в месяц</strong>. Нижняя граница — если не считать расходом ОПВ, которые идут на ваш же пенсионный счёт. Выше этого порога ИП дешевле, а регулярный фриланс к тому же выглядит как предпринимательство, а не как разовый доход. Режим самозанятого (4% при 0% ИПН) был бы дешевле, но входят ли перевод, IT-услуги и SMM в перечень 40 видов деятельности, по-прежнему не подтверждено. Это стоит проверить по телефону 1414. Магазину на Kaspi ИП или ТОО нужен в любом случае (<a target="_blank" rel="noopener" href="https://bank.kz/wikibank/finansy/otkryvaem-magazin-kaspi-poshagovaya-instrukcziya/">bank.kz</a>). Блогерам стоит помнить, что с 2025 года YouTube и TikTok передают налоговым органам данные о доходах казахстанцев (<a target="_blank" rel="noopener" href="https://finance.kz/news/youtube-i-tiktok-nachnut-otchityvatsya-o-dohodah-kazahstanskih-blogerov-s-2025-goda">finance.kz</a>).</p>
+<p>Долларовые выплаты с Upwork и ИИ-платформ обычно идут через Payoneer (<a target="_blank" rel="noopener" href="https://www.payoneer.com/ru/get-paid-by-upwork/">Payoneer</a>). Wise не открывает счета резидентам Казахстана (<a target="_blank" rel="noopener" href="https://www.exiap.com/guides/using-the-wise-card-in-kazakhstan">exiap.com</a>). По правилам валютного контроля, действующим с 19 апреля 2026 года, банки проверяют операции строже, а для части валютных договоров нужен учётный номер (<a target="_blank" rel="noopener" href="https://iris.kz/events/valyutnyy-kontrol-v-2026-godu-novye-pravila-nb-rk-dlya-ved-valyutnykh-dogovorov-i-finansovykh-zaymov/">iris.kz</a>). Как эти правила применяются к физлицу, которое получает оплату услуг из-за рубежа, выяснить не удалось. Это ещё один довод работать через ИП с договором или офертой платформы. Из рисков, разобранных в прошлом отчёте, для новых путей важны три. Нельзя менять страну через VPN, чтобы попасть на закрытую платформу: это прямое нарушение правил Outlier, и аккаунт с заработанными деньгами могут заблокировать (<a target="_blank" rel="noopener" href="https://www.eneba.com/hub/reviews/is-outlier-legit/">eneba</a>). Перед курсом по ваучеру нужно читать договор школы на предмет штрафов (<a target="_blank" rel="noopener" href="https://raem.kz/tech-orda-2026-kak-poluchit-do-500-tysyach-tenge-na-it-kurs-i-ne-ostatsya-dolzhnym-shkole/">raem.kz</a>). И нельзя принимать платежи за других или «сдавать» свою карту: по ст. 232-1 УК за это грозит до 7 лет (<a target="_blank" rel="noopener" href="https://kz.kursiv.media/2026-06-04/lngr-dropper-statistics/">Курсив</a>).</p>
+<h2 id="s6">План на 12 месяцев: от заявок к собственной практике</h2>
+<p>План начинается в декабре 2026 года и учитывает сессии и каникулы. Логика такая: первые четыре месяца — подать заявки на все языковые платформы и научиться одному продаваемому IT-навыку (n8n/Make + ИИ-боты + основы Python). Затем по фактическим данным оставить два лучших трека, а летом использовать свободное время для стажировки или рывка во фрилансе. Если деньги нужны в первый же месяц, офлайн-варианты из 30-дневного отчёта (доставка, смены, декабрьский сезон) можно держать параллельно в первые 1–2 месяца. Все целевые суммы — мои оценки.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Период</th>
+<th>Учёба</th>
+<th>Доход и работа</th>
+<th>Навыки</th>
+<th>Деньги и право</th>
+<th>Цель, ₸/мес (оценка)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Мес. 1–2 (дек 2026 – янв 2027)</td>
+<td>зимняя сессия, 8–15 ч/нед</td>
+<td>Заявки в Welo Data (каз. и рус.), TELUS, Prolific, Sigma, Mindrift; пройти тесты. Профиль на Upwork: «EN→KZ/RU локализация + проверка ИИ-текстов»</td>
+<td>Бесплатные курсы Skills Enbek/Coursera; n8n на бесплатном тарифе; собрать 2 демо-бота на казахском и русском</td>
+<td>Сбережения — на сберегательный вклад КФГД или ОВГЗ с фиксацией на 12 мес. Payoneer. Уточнить в 1414, входит ли ваша деятельность в перечень самозанятых</td>
+<td>0–100 тыс.</td>
+</tr>
+<tr>
+<td>Мес. 3–4 (фев – мар)</td>
+<td>семестр, 20–30 ч/нед</td>
+<td>ИИ-разметка 8–12 ч/нед; 2–3 бота для знакомых бизнесов (салоны, клиники, продавцы Kaspi) по 50–150 тыс. ₸; если сильны в предмете ЕНТ — запустить одну онлайн-группу на весенний пик</td>
+<td>Интеграции amoCRM/Битрикс24, API OpenAI/WhatsApp</td>
+<td>Открыть ИП на упрощёнке, как только регулярный доход вне платформ превысит ~150–270 тыс. ₸</td>
+<td>100–300 тыс.</td>
+</tr>
+<tr>
+<td>Мес. 5–6 (апр – май)</td>
+<td>семестр</td>
+<td>Разбор итогов: оставить два трека с лучшим доходом за час, остальные закрыть. Поднять ставки на Upwork до $15–20/ч. Предлагать клиентам ботов ежемесячную поддержку за 15–30 тыс. ₸</td>
+<td>Подать заявки на летние стажировки: Kolesa Academy, Halyk Start (с 3-го курса)</td>
+<td>Первая декларация 910.00 за полугодие</td>
+<td>250–500 тыс.</td>
+</tr>
+<tr>
+<td>Мес. 7–9 (июн – авг)</td>
+<td>каникулы</td>
+<td>Вариант А: стажировка полного дня (Kolesa — 150 тыс. ₸ за 2 мес.) ради оффера. Вариант Б: рывок во фрилансе и заявка на экспертные ИИ-треки. Опционально — экскурсии в Алматы для иностранцев</td>
+<td>Kaspi Lab (в 2025 году заявки до 31 августа); Tech Orda — вероятное окно в августе–сентябре 2027 года; курс от 6 месяцев, совместимый с учёбой</td>
+<td>Вести учёт дохода за час по каждому треку, чтобы осенью оставить лучшие</td>
+<td>250–500 тыс.</td>
+</tr>
+<tr>
+<td>Мес. 10–12 (сен – ноя 2027)</td>
+<td>семестр</td>
+<td>Масштабирование: 3–6 клиентов на поддержке, субподряд другим студентам (SMM или преподавание за 40–60% чека); ставки на Upwork $20–30/ч; при желании — тест Kaspi-магазина на ≤300 тыс. ₸</td>
+<td>Портфолио на GitHub и кейсы с цифрами — для джун-вакансий или удалённого 1С/CRM</td>
+<td>Реинвестировать прибыль в рекламу услуг, а не в товар; подушка остаётся на вкладе</td>
+<td>400 тыс. – 1 млн</td>
+</tr>
+</tbody>
+</table></div>
+<p>Решение на пятом-шестом месяце — главная развилка плана. Если клиенты на автоматизацию появляются и возвращаются, выгоднее развивать собственную практику: её потолок через год выше джун-зарплаты. Если продажи не идут, а технические задачи нравятся, лучше направить лето и осень на стажировку и найм в 1С, CRM-внедрение или QA. Вход в профессию сам по себе медленнее, но надёжнее. Языковые треки (разметка и перевод) в обоих сценариях остаются фоновым долларовым доходом.</p>
+<h2 id="s7">Что в этих цифрах надёжно, а что нет</h2>
+<p>Почти все данные собраны из поисковых выдержек. Казахстанские сайты (guide.kaspi.kz, hh.kz, taylor.kz, astanahub.com, kdif.kz, nationalbank.kz) при прямом обращении из среды исследования были недоступны. Ставки ИИ-платформ — это заявленные диапазоны из вакансий и сторонних обзоров, не подтверждённые выплаты. Для Welo, TELUS и Mindrift ставок именно по Казахстану найти не удалось. Цены студий и курсов публикуют продавцы, которые заинтересованы их завысить. Зарплатные обещания школ выше медианы hh.kz. Успешные кейсы блогеров и селлеров — истории выживших. Все доходы на 3, 6 и 12 месяцев в таблицах помечены как оценки и выведены из ставок, а не измерены. Курс пересчёта — 445 ₸/$ для единства с предыдущим отчётом (официальные 444,30 ₸ на 14.11.2026 (<a target="_blank" rel="noopener" href="https://bank.kz/news/finansy-news/kursy-valyut-14-noyabrya-2026/">bank.kz</a>)). Но в шапках Informburo в выдачах конца 2026 года видны курсы <strong>482,7/485,3 и 486,7/489,3</strong> (<a target="_blank" rel="noopener" href="https://informburo.kz/novosti/kakie-depozity-byli-samymi-vygodnymi-v-kazaxstane-v-noiabre-obzor-kfgd">Informburo</a>). Данные противоречат друг другу, и перед расчётами нужно проверить актуальный курс. Проверить самостоятельно стоит также допуск Казахстана на каждой ИИ-платформе, ставку упрощёнки в своём районе, перечень видов деятельности самозанятых, даты Tech Orda 2027 и наборов в стажировки, а также текущие ставки по вкладам в банках — участниках КФГД.</p>
+<h2 id="s8">Вывод</h2>
+<p>Если увеличить горизонт с месяца до года, меняется сама природа выбора. За 30 дней выигрывает тот, кто быстрее продаёт свои часы офлайн. За 12 месяцев выигрывает тот, кто повышает цену часа и выходит за пределы личных часов. Здесь у трёхъязычного студента есть асимметричное преимущество: казахский на глобальном рынке ИИ и локализации стоит дороже русского именно потому, что носителей с рабочим английским мало. Местный бизнес при этом готов платить сотни тысяч тенге за автоматизацию, которую иностранный фрилансер не сделает на казахском. Сбережения в этой картине служат не стартовым капиталом, а страховкой. Депозит под 15–20% и сжатый рынок джунов делают товарный бизнес и платные курсы худшим применением денег, чем обычно кажется.</p>
+<p>Вторая неочевидная мысль: самый ценный актив через год — не сумма на счёте, а портфолио работающих интеграций, отзывы на Upwork и уровень на ИИ-платформах. Это капитал, который при снижении ставок по вкладам продолжает расти. Если в течение года вклады упадут ниже 15%, а курс тенге продолжит слабеть, относительная выгода долларовых и навыковых треков перед «ничегонеделанием» только увеличится.</p></main>
+<footer>Данные собраны в основном из поисковых выдержек и объявлений с «до …». Проверяйте ключевые цифры перед решением.</footer>
+</div>
