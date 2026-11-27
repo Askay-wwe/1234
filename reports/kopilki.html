@@ -1,0 +1,451 @@
+<title>Копилки до 2029</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
+<style>
+/* Layout: summary strip, goal cards in a 2-column grid, then the month form and history; one column on phones */
+:root{
+  --bg:#f4f6f5;--surface:#ffffff;--fg:#1b2420;--muted:#5f6b66;--line:#dce3e0;
+  --accent:#0f7a6a;--accent-soft:#e0f0ec;
+  --g-cushion:#5a6a8a;--g-thai:#0f8a7a;--g-home:#a96f14;--g-turkey:#c0503a;
+  --ok:#1d7a3e;--ok-soft:#e2f3e7;--bad:#b23f29;--bad-soft:#f8e3dd;--track:#e8ecea;
+  --display:"Unbounded",system-ui,sans-serif;
+  --body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111715;--surface:#19211f;--fg:#e5ebe8;--muted:#9aa7a1;--line:#2b3633;
+  --accent:#4cc3ad;--accent-soft:#17332e;
+  --g-cushion:#9aaad0;--g-thai:#4cc3ad;--g-home:#e0a64a;--g-turkey:#f0876f;
+  --ok:#6fd18f;--ok-soft:#173222;--bad:#f08a70;--bad-soft:#3a1f19;--track:#26302d;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111715;--surface:#19211f;--fg:#e5ebe8;--muted:#9aa7a1;--line:#2b3633;
+  --accent:#4cc3ad;--accent-soft:#17332e;
+  --g-cushion:#9aaad0;--g-thai:#4cc3ad;--g-home:#e0a64a;--g-turkey:#f0876f;
+  --ok:#6fd18f;--ok-soft:#173222;--bad:#f08a70;--bad-soft:#3a1f19;--track:#26302d;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15.5px;line-height:1.55}
+.wrap{max-width:960px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(24px,4.6vw,36px);line-height:1.15;margin:6px 0 0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(18px,3vw,22px);margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:8px 0 0;max-width:65ch}
+.num{font-variant-numeric:tabular-nums}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat .v{font-family:var(--display);font-weight:500;font-size:clamp(17px,2.6vw,22px);font-variant-numeric:tabular-nums}
+.stat .l{font-size:13px;color:var(--muted)}
+.goals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:700px){.goals,.strip{grid-template-columns:minmax(0,1fr)}}
+.goal{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:10px;min-width:0}
+.goal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.goal-name{font-weight:600;font-size:16.5px;display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.goal-meta{font-size:13px;color:var(--muted)}
+.pill{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.pill.done{background:var(--accent-soft);color:var(--accent)}
+.bar{height:10px;background:var(--track);border-radius:999px;overflow:hidden}
+.bar>i{display:block;height:100%;border-radius:999px;transition:width .4s ease}
+.goal-nums{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px}
+.goal-nums b{font-weight:600}
+.hint{font-size:13px;color:var(--muted)}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:14px}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+label{display:grid;gap:4px;font-size:13px;color:var(--muted);font-weight:500}
+input{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:9px 11px;min-width:0;width:100%}
+input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.f-small{width:170px;max-width:100%}
+.f-grow{flex:1 1 220px}
+.deps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:700px){.deps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.btn{font:inherit;font-weight:600;font-size:14.5px;border-radius:9px;padding:10px 16px;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--surface)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.danger{border-color:var(--bad);background:var(--bad);color:var(--surface)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.keep{font-size:14px;color:var(--muted)}
+.keep b{color:var(--fg)}
+.msg{font-size:14px;padding:10px 12px;border-radius:9px;background:var(--accent-soft);color:var(--fg)}
+.msg.err{background:var(--bad-soft)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600}
+th:first-child,td:first-child,td.note{text-align:left}
+td.note{white-space:normal;color:var(--muted);min-width:140px}
+tr:last-child td{border-bottom:0}
+.empty{color:var(--muted);padding:18px;text-align:center}
+.rules{font-size:13.5px;color:var(--muted);display:grid;gap:4px}
+@media (prefers-reduced-motion:reduce){.bar>i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Ноябрь 2026 → лето 2029 · суммы в тенге</div>
+    <h1>Копилки до 2029</h1>
+    <p class="sub">Вписывайте, сколько заработали за месяц. Страница предложит, сколько положить в каждую копилку, и покажет, успеваете ли вы к сроку. Стипендию и пенсию сюда не пишите: они идут на жизнь.</p>
+  </header>
+
+  <div id="status" class="msg" hidden></div>
+
+  <section class="strip" aria-label="Итоги">
+    <div class="stat"><div class="v" id="s-total">—</div><div class="l">накоплено всего</div></div>
+    <div class="stat"><div class="v" id="s-month">—</div><div class="l">отложено в этом месяце</div></div>
+    <div class="stat"><div class="v" id="s-next">—</div><div class="l" id="s-next-l">до ближайшей цели</div></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Цели</h2>
+    <div class="goals" id="goals"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="f-title">
+    <h2 id="f-title">Записать месяц</h2>
+    <div class="row">
+      <label class="f-small">Месяц<input type="month" id="f-month"></label>
+      <label class="f-grow">Заработок за месяц с работы, ₸<input type="number" id="f-income" inputmode="numeric" min="0" step="1000" placeholder="например, 200000"></label>
+      <button class="btn ghost" id="f-suggest" type="button">Предложить разбивку</button>
+    </div>
+    <div class="deps" id="deps"></div>
+    <div class="keep" id="f-keep"></div>
+    <div class="row">
+      <label class="f-grow">Заметка<input type="text" id="f-note" maxlength="140" placeholder="например, первая выплата с Prolific"></label>
+      <button class="btn" id="f-save" type="button">Сохранить месяц</button>
+    </div>
+    <div class="rules">
+      <span>Правило разбивки: <span id="r-pct">75</span>% заработка идёт в копилки, остальное вам. Сначала каждая цель получает свою норму на месяц, начиная с ближайшего срока. Остаток идёт на квартиру.</span>
+      <span>Доля в копилки: <input type="number" id="f-pct" min="10" max="100" step="5" style="width:80px;display:inline-block;padding:4px 8px"> % <button class="linkbtn" id="f-pct-save" type="button">сохранить</button></span>
+    </div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>История</h2>
+    <div class="tw"><table>
+      <thead><tr><th>Месяц</th><th>Заработок</th><th>Подушка</th><th>Тай</th><th>Квартира</th><th>Турция</th><th>Заметка</th><th></th></tr></thead>
+      <tbody id="hist"><tr><td colspan="8" class="empty">Загружаю записи…</td></tr></tbody>
+    </table></div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const START = "2026-11";
+  const DEFAULT_GOALS = [
+    {id:"cushion", name:"Подушка безопасности", target:300000, deadline:"2027-05", hint:"3 месяца расходов, держите на вкладе"},
+    {id:"thai", name:"Тай с друзьями", target:700000, deadline:"2027-06", hint:"1 неделя ≈ 0,5–0,7 млн, 2 недели ≈ 0,8–1,1 млн"},
+    {id:"home", name:"Взнос на квартиру", target:3500000, deadline:"2029-02", hint:"10% за новостройку с чистовой; 20% за вторичку ≈ 7 млн"},
+    {id:"turkey", name:"Турция с мамой", target:1000000, deadline:"2029-06", hint:"7 ночей на двоих, оценка 0,8–1,2 млн"}
+  ];
+  const COLORS = {cushion:"var(--g-cushion)", thai:"var(--g-thai)", home:"var(--g-home)", turkey:"var(--g-turkey)"};
+  const MONTHS = ["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"];
+  const MONTHS_GEN = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+
+  const state = {goals: DEFAULT_GOALS.map(g=>({...g})), savePct:75, entries:[], loaded:false, db:null, canWrite:true, editingGoal:null, confirmDel:null};
+
+  const $ = id => document.getElementById(id);
+  function h(tag, attrs, ...kids){
+    const el = document.createElement(tag);
+    if (attrs) for (const [k,v] of Object.entries(attrs)){
+      if (v == null || v === false) continue;
+      if (k === "style") el.setAttribute("style", v);
+      else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? "" : v);
+    }
+    for (const c of kids.flat()){ if (c == null || c === false) continue; el.append(c instanceof Node ? c : document.createTextNode(String(c))); }
+    return el;
+  }
+  const fmt = n => Math.round(n).toLocaleString("ru-RU") + " ₸";
+  const fmtShort = n => n >= 1e6 ? (n/1e6).toLocaleString("ru-RU",{maximumFractionDigits:2}) + " млн ₸" : Math.round(n/1000).toLocaleString("ru-RU") + " тыс. ₸";
+  const num = v => { const x = Number(String(v).replace(/\s/g,"")); return isFinite(x) && x > 0 ? Math.round(x) : 0; };
+  const ceil1k = n => Math.ceil(n/1000)*1000;
+  const ymNow = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0"); };
+  const diff = (a,b) => { const [ay,am]=a.split("-").map(Number),[by,bm]=b.split("-").map(Number); return (by-ay)*12+(bm-am); };
+  const ymLabel = ym => { const [y,m]=ym.split("-").map(Number); return MONTHS[m-1] + " " + y; };
+  const ymGen = ym => { const [y,m]=ym.split("-").map(Number); return MONTHS_GEN[m-1] + " " + y; };
+  const validYM = s => typeof s === "string" && /^\d{4}-(0[1-9]|1[0-2])$/.test(s);
+
+  function savedBy(excludeMonth){
+    const s = {}; for (const g of state.goals) s[g.id] = 0;
+    for (const e of state.entries){
+      if (excludeMonth && e.month === excludeMonth) continue;
+      const d = e.deposits || {};
+      for (const g of state.goals) s[g.id] += Number(d[g.id]) || 0;
+    }
+    return s;
+  }
+
+  function suggest(income, month){
+    const saved = savedBy(month);
+    let pool = Math.floor(income * state.savePct / 100 / 1000) * 1000;
+    const alloc = {}; for (const g of state.goals) alloc[g.id] = 0;
+    const order = [...state.goals].sort((a,b)=>a.deadline.localeCompare(b.deadline));
+    for (const g of order){
+      const rem = Math.max(0, g.target - saved[g.id]);
+      if (!rem || pool <= 0) continue;
+      const left = Math.max(1, diff(month, g.deadline) + 1);
+      const give = Math.min(ceil1k(rem / left), rem, pool);
+      alloc[g.id] += give; pool -= give;
+    }
+    const tail = ["home", ...order.map(g=>g.id).filter(id=>id!=="home")];
+    for (const id of tail){
+      if (pool <= 0) break;
+      const g = state.goals.find(x=>x.id===id); if (!g) continue;
+      const rem = Math.max(0, g.target - saved[id] - alloc[id]);
+      const give = Math.min(rem, pool); alloc[id] += give; pool -= give;
+    }
+    if (pool > 0) alloc.home += pool;
+    return alloc;
+  }
+
+  function goalStatus(g, saved, now){
+    if (saved >= g.target) return {cls:"done", text:"Собрано"};
+    const left = diff(now, g.deadline) + 1;
+    if (left <= 0) return {cls:"bad", text:"Срок прошёл"};
+    const total = Math.max(1, diff(START, g.deadline) + 1);
+    const elapsed = Math.min(total, Math.max(0, diff(START, now)));
+    const expected = g.target * elapsed / total;
+    if (saved + 1000 < expected) return {cls:"bad", text:"Отстаю на " + fmtShort(expected - saved)};
+    return {cls:"ok", text:"Успеваю"};
+  }
+
+  function renderGoals(){
+    const now = ymNow(), saved = savedBy(null), box = $("goals");
+    box.replaceChildren();
+    for (const g of state.goals){
+      const s = saved[g.id], pct = Math.min(100, g.target ? s / g.target * 100 : 0);
+      const st = goalStatus(g, s, now);
+      const left = diff(now, g.deadline) + 1;
+      const rem = Math.max(0, g.target - s);
+      const perMonth = rem && left > 0 ? ceil1k(rem / left) : 0;
+      const card = h("article", {class:"goal"},
+        h("div", {class:"goal-head"},
+          h("div", null,
+            h("div", {class:"goal-name"}, h("span", {class:"dot", style:"background:" + COLORS[g.id]}), g.name),
+            h("div", {class:"goal-meta"}, "к " + ymGen(g.deadline) + (left > 0 ? " · осталось " + left + " мес." : ""))
+          ),
+          h("span", {class:"pill " + st.cls}, st.text)
+        ),
+        h("div", {class:"bar", role:"progressbar", "aria-valuemin":"0", "aria-valuemax":"100", "aria-valuenow":String(Math.round(pct)), "aria-label":g.name},
+          h("i", {style:"width:" + pct.toFixed(1) + "%;background:" + COLORS[g.id]})),
+        h("div", {class:"goal-nums num"},
+          h("span", null, h("b", null, fmt(s)), " из " + fmt(g.target)),
+          h("span", null, rem ? (perMonth ? "нужно " + fmtShort(perMonth) + " в месяц" : "") : "готово")
+        ),
+        g.hint ? h("div", {class:"hint"}, g.hint) : null
+      );
+      if (state.editingGoal === g.id){
+        const tId = "g-t-" + g.id, dId = "g-d-" + g.id;
+        card.append(h("div", {class:"row"},
+          h("label", {class:"f-grow"}, "Цель, ₸", h("input", {type:"number", id:tId, min:"0", step:"10000", value:String(g.target), inputmode:"numeric"})),
+          h("label", {class:"f-small"}, "Срок", h("input", {type:"month", id:dId, value:g.deadline})),
+          h("button", {class:"btn", type:"button", onclick:()=>saveGoal(g.id, tId, dId)}, "Сохранить"),
+          h("button", {class:"btn ghost", type:"button", onclick:()=>{state.editingGoal=null; renderGoals();}}, "Отмена")
+        ));
+      } else if (state.canWrite) {
+        card.append(h("div", null, h("button", {class:"linkbtn", type:"button", onclick:()=>{state.editingGoal=g.id; renderGoals();}}, "Изменить сумму или срок")));
+      }
+      box.append(card);
+    }
+  }
+
+  function renderStrip(){
+    const saved = savedBy(null), now = ymNow();
+    const total = Object.values(saved).reduce((a,b)=>a+b,0);
+    $("s-total").textContent = state.loaded ? fmt(total) : "—";
+    const cur = state.entries.find(e=>e.month===now);
+    const curSum = cur ? Object.values(cur.deposits||{}).reduce((a,b)=>a+(Number(b)||0),0) : 0;
+    $("s-month").textContent = state.loaded ? fmt(curSum) : "—";
+    const open = [...state.goals].filter(g=>saved[g.id] < g.target).sort((a,b)=>a.deadline.localeCompare(b.deadline))[0];
+    if (open){ const l = diff(now, open.deadline) + 1; $("s-next").textContent = (l > 0 ? l : 0) + " мес."; $("s-next-l").textContent = "до цели «" + open.name + "»"; }
+    else { $("s-next").textContent = "Всё собрано"; $("s-next-l").textContent = "все цели закрыты"; }
+  }
+
+  function renderDeps(){
+    const box = $("deps");
+    if (box.childElementCount) return;
+    for (const g of state.goals){
+      box.append(h("label", null,
+        h("span", {style:"display:flex;align-items:center;gap:6px"}, h("span", {class:"dot", style:"background:" + COLORS[g.id]}), g.name + ", ₸"),
+        h("input", {type:"number", id:"f-dep-" + g.id, min:"0", step:"1000", inputmode:"numeric", placeholder:"0", oninput:updateKeep})
+      ));
+    }
+  }
+
+  function updateKeep(){
+    const income = num($("f-income").value);
+    const dep = state.goals.reduce((a,g)=>a + num($("f-dep-" + g.id).value), 0);
+    const keep = income - dep;
+    const el = $("f-keep"); el.replaceChildren();
+    if (!income && !dep) return;
+    el.append("В копилки: ", h("b", null, fmt(dep)), " · вам на жизнь и расходы: ", h("b", null, fmt(Math.max(0, keep))));
+    if (keep < 0) el.append(" (раскладываете больше, чем заработали: проверьте суммы)");
+  }
+
+  function renderHist(){
+    const tb = $("hist"); tb.replaceChildren();
+    if (!state.loaded){ tb.append(h("tr", null, h("td", {colspan:"8", class:"empty"}, "Загружаю записи…"))); return; }
+    const rows = [...state.entries].sort((a,b)=>b.month.localeCompare(a.month));
+    if (!rows.length){ tb.append(h("tr", null, h("td", {colspan:"8", class:"empty"}, "Пока пусто. Запишите первый месяц в форме выше."))); return; }
+    for (const e of rows){
+      const d = e.deposits || {};
+      const actions = h("td", null);
+      if (state.canWrite){
+        if (state.confirmDel === e.month){
+          actions.append(h("button", {class:"btn danger", type:"button", style:"padding:5px 10px;font-size:13px", onclick:()=>delEntry(e.month)}, "Удалить"), " ",
+            h("button", {class:"linkbtn", type:"button", onclick:()=>{state.confirmDel=null; renderHist();}}, "отмена"));
+        } else {
+          actions.append(h("button", {class:"linkbtn", type:"button", onclick:()=>loadEntry(e)}, "изменить"), " · ",
+            h("button", {class:"linkbtn", type:"button", onclick:()=>{state.confirmDel=e.month; renderHist();}}, "удалить"));
+        }
+      }
+      tb.append(h("tr", null,
+        h("td", null, ymLabel(e.month)),
+        h("td", null, e.income ? fmt(e.income) : "—"),
+        ...state.goals.map(g=>h("td", null, Number(d[g.id]) ? fmt(Number(d[g.id])) : "—")),
+        h("td", {class:"note"}, e.note || ""),
+        actions
+      ));
+    }
+  }
+
+  function renderAll(){
+    $("r-pct").textContent = String(state.savePct);
+    if (document.activeElement !== $("f-pct")) $("f-pct").value = String(state.savePct);
+    renderStrip(); renderGoals(); renderDeps(); renderHist(); updateFormLabel();
+    $("f-save").disabled = !state.canWrite || !state.db;
+  }
+
+  function showStatus(text, err){ const s = $("status"); s.textContent = text; s.className = "msg" + (err ? " err" : ""); s.hidden = !text; }
+  let flashTimer;
+  function flash(text){ showStatus(text, false); clearTimeout(flashTimer); flashTimer = setTimeout(()=>{ if ($("status").textContent === text) showStatus(""); }, 3500); }
+
+  function updateFormLabel(){
+    const m = $("f-month").value;
+    $("f-save").textContent = state.entries.some(e=>e.month===m) ? "Обновить месяц" : "Сохранить месяц";
+  }
+
+  function loadEntry(e){
+    $("f-month").value = e.month; $("f-income").value = e.income ? String(e.income) : "";
+    for (const g of state.goals){ const v = Number((e.deposits||{})[g.id]) || 0; $("f-dep-" + g.id).value = v ? String(v) : ""; }
+    $("f-note").value = e.note || "";
+    updateKeep(); updateFormLabel();
+    $("f-title").scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  async function write(fn){
+    try { await fn(); return true; }
+    catch (err){
+      const code = err && err.code;
+      if (code === "invalid_argument"){ state.canWrite = false; renderAll(); showStatus("Сохранять здесь может только владелец страницы. Для вас она открыта на просмотр.", true); }
+      else if (code === "quota_exceeded") showStatus("Хранилище переполнено: удалите старые записи.", true);
+      else showStatus("Не удалось сохранить. Проверьте интернет и попробуйте ещё раз.", true);
+      return false;
+    }
+  }
+
+  async function saveMonth(){
+    if (!state.db) return;
+    const month = $("f-month").value;
+    if (!validYM(month)){ showStatus("Выберите месяц.", true); return; }
+    const deposits = {}; let any = false;
+    for (const g of state.goals){ const v = num($("f-dep-" + g.id).value); deposits[g.id] = v; if (v) any = true; }
+    const income = num($("f-income").value);
+    if (!any && !income){ showStatus("Впишите заработок или суммы по копилкам.", true); return; }
+    const body = {month, income, deposits, note: $("f-note").value.trim().slice(0,140), updatedAt: new Date().toISOString()};
+    $("f-save").disabled = true;
+    const ok = await write(()=>state.db.collection("entries").doc(month).set(body));
+    $("f-save").disabled = !state.canWrite;
+    if (ok){
+      flash("Записал " + ymLabel(month) + ".");
+      $("f-income").value = ""; $("f-note").value = ""; for (const g of state.goals) $("f-dep-" + g.id).value = "";
+      updateKeep();
+    }
+  }
+
+  async function delEntry(month){
+    state.confirmDel = null;
+    if (await write(()=>state.db.collection("entries").doc(month).delete())) flash("Удалил запись за " + ymLabel(month) + ".");
+    renderHist();
+  }
+
+  function settingsBody(){ return {goals: state.goals.map(g=>({id:g.id, name:g.name, target:g.target, deadline:g.deadline, hint:g.hint||""})), savePct: state.savePct}; }
+
+  async function saveGoal(id, tId, dId){
+    const t = num($(tId).value), d = $(dId).value;
+    if (!t){ showStatus("Сумма цели должна быть больше нуля.", true); return; }
+    if (!validYM(d)){ showStatus("Выберите срок.", true); return; }
+    const prev = state.goals.map(g=>({...g}));
+    state.goals = state.goals.map(g=>g.id===id ? {...g, target:t, deadline:d} : g);
+    state.editingGoal = null; renderAll();
+    if (state.db && await write(()=>state.db.doc("plan/settings").set(settingsBody()))) flash("Цель обновлена.");
+    else if (state.db){ state.goals = prev; renderAll(); }
+  }
+
+  async function savePct(){
+    const p = Math.min(100, Math.max(10, num($("f-pct").value) || 75));
+    state.savePct = p; renderAll();
+    if (state.db && await write(()=>state.db.doc("plan/settings").set(settingsBody()))) flash("Доля в копилки: " + p + "%.");
+  }
+
+  // Wire up
+  $("f-month").value = ymNow();
+  $("f-month").addEventListener("change", updateFormLabel);
+  $("f-income").addEventListener("input", updateKeep);
+  $("f-suggest").addEventListener("click", ()=>{
+    const income = num($("f-income").value), month = $("f-month").value;
+    if (!income){ showStatus("Сначала впишите заработок за месяц.", true); return; }
+    if (!validYM(month)){ showStatus("Выберите месяц.", true); return; }
+    showStatus("");
+    const a = suggest(income, month);
+    for (const g of state.goals) $("f-dep-" + g.id).value = a[g.id] ? String(a[g.id]) : "";
+    updateKeep();
+  });
+  $("f-save").addEventListener("click", saveMonth);
+  $("f-pct-save").addEventListener("click", savePct);
+  renderAll();
+
+  // Data
+  (async function(){
+    let db = null;
+    try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch(_) { db = null; }
+    if (!db){
+      state.loaded = true; state.canWrite = false; renderAll();
+      showStatus("Сохранение недоступно в этом окне. Откройте страницу на claude.ai, войдя в свой аккаунт. Калькулятор разбивки работает и так.", true);
+      return;
+    }
+    state.db = db;
+    try {
+      const user = await window.claude.use("user");
+      if (user && user.can){ const c = await user.can("data.write"); if (c === false) state.canWrite = false; }
+    } catch(_) {}
+    let pending = 2;
+    const timer = setTimeout(()=>{ if (pending > 0) showStatus("Не получается связаться с хранилищем. Записи могут появиться чуть позже.", true); }, 10000);
+    const settle = snapFromCache => { if (!snapFromCache && pending > 0){ pending--; if (!pending){ clearTimeout(timer); if ($("status").classList.contains("err")) showStatus(""); } } };
+    const onErr = () => { clearTimeout(timer); state.loaded = true; renderAll(); showStatus("Не удалось загрузить записи. Обновите страницу позже.", true); };
+    db.doc("plan/settings").onSnapshot(snap=>{
+      if (snap.exists){
+        const d = snap.data() || {};
+        if (Array.isArray(d.goals)){
+          state.goals = DEFAULT_GOALS.map(def=>{
+            const s = d.goals.find(x=>x && x.id===def.id) || {};
+            return {...def, target: num(s.target) || def.target, deadline: validYM(s.deadline) ? s.deadline : def.deadline};
+          });
+        }
+        if (num(d.savePct)) state.savePct = Math.min(100, Math.max(10, num(d.savePct)));
+      }
+      settle(snap.metadata && snap.metadata.fromCache); renderAll();
+    }, onErr);
+    db.collection("entries").onSnapshot(snap=>{
+      state.entries = snap.docs.map(doc=>{
+        const d = doc.data() || {};
+        const deposits = {}; const src = (d.deposits && typeof d.deposits === "object") ? d.deposits : {};
+        for (const g of DEFAULT_GOALS) deposits[g.id] = num(src[g.id]);
+        return {month: validYM(d.month) ? d.month : doc.id, income: num(d.income), deposits, note: typeof d.note === "string" ? d.note : ""};
+      }).filter(e=>validYM(e.month));
+      state.loaded = true;
+      settle(snap.metadata && snap.metadata.fromCache); renderAll();
+    }, onErr);
+  })();
+})();
+</script>
